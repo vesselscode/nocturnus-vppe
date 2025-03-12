@@ -1,5 +1,20 @@
 <div class="engine-container">
-    <h1>Engine Component</h1>
-    <button (click)="pistonUp()">Piston Up</button>
+  <div
+
+    
+    *ngIf="pistonPosition === 'up'; else pistonIsDown"
+  >
+    <h1>O vampiro está meio-morto</h1>
     <button (click)="pistonDown()">Piston Down</button>
+
   </div>
+
+  <ng-template 
+  
+     #pistonIsDown
+  >
+      <h1>O vampiro morreu</h1>
+      <button (click)="pistonUp()">Piston Up</button>
+      
+  </ng-template>
+</div>
