@@ -13,11 +13,11 @@ export class EngineComponent{
         console.log("Engine Component");
     }
 
-    public goesUp(){
+    public pistonUp(){
         console.log("Piston goes up");
     }
 
-    public goesDown(){
+    public pistonDown(){
         console.log("Piston goes down");
     }
 }
