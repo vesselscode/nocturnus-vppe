@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EngineComponent } from './Engine/Engine.component';
+import { EengineComponent } from './eengine/eengine.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    EngineComponent
+    EengineComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
