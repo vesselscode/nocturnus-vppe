@@ -12,7 +12,7 @@ import { NgIf } from "@angular/common";
 export class EengineComponent{
 
     public pistonPosition: String = "down";
-    public eengineIntegrity = 100;
+    public eengineIntegrity = 100; // não pode ser menor que 0
     public eengineStatus = ""
     public generatedEnergy: number = 0; // Energia gerada pelo pistão
     public pistonUseDecreaser: number = 3; // deve subtrair do eengineIntegrity a cada uso do pistão
@@ -21,11 +21,16 @@ export class EengineComponent{
     constructor(){
         console.log("construtor");
         console.log(this.integrity());
+        this.pistonUse;
     }
 
     public pistonUp(){
         this.pistonPosition = "up";
         console.log("Piston goes up");
+        console.log(this.integrity());
+        this.pistonUse();
+        this.integrity();
+        
     }
 
     public pistonDown(){
@@ -45,12 +50,12 @@ export class EengineComponent{
         
     } 
 
-    // public pistonUse(){
-    //     if (this.pistonPosition === "up") {
-    //         this.generatedEnergy += 1; // Gera energia ao mover o pistão para baixo
-    //         this.eengineIntegrity -= this.pistonUseDecreaser; // Diminui a integridade do motor
-    //         console.log(`Energy generated: ${this.generatedEnergy} units`);
-    //         console.log(`Engine integrity: ${this.eengineIntegrity}`);
-    //     }
-    // }
+    public pistonUse(){
+        if (this.pistonPosition === "up") {
+            this.generatedEnergy += 1; // Gera energia ao mover o pistão para baixo
+            this.eengineIntegrity -= this.pistonUseDecreaser; // Diminui a integridade do motor
+            console.log(`Energy generated: ${this.generatedEnergy} units`);
+            console.log(`Engine integrity: ${this.eengineIntegrity}`);
+        }
+    }
 }
